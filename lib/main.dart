@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musika/core/configs/theme/app_theme.dart';
+import 'package:musika/presentation/splash/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo', theme: AppTheme.lightTheme, home: Container());
+        debugShowCheckedModeBanner: false,
+        title: 'Musika',
+        theme: AppTheme.lightTheme,
+        home: const SplashPage());
   }
 }
