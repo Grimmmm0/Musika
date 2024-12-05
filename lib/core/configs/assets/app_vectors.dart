@@ -5,4 +5,7 @@ class AppVectors {
   static const String logo = '${basePath}logoMusika$format';
   static const String sunLogo = '${basePath}sun$format';
   static const String moonLogo = '${basePath}moon$format';
+  static const String topPattern = '${basePath}top_pattern$format';
+   static const String bottomPattern = '${basePath}bottom_pattern$format';
+
 }
