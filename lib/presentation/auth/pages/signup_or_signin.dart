@@ -5,6 +5,7 @@ import 'package:musika/common/widgets/button/basic_app_button.dart';
 import 'package:musika/core/configs/assets/app_images.dart';
 import 'package:musika/core/configs/assets/app_vectors.dart';
 import 'package:musika/core/configs/theme/app_colors.dart';
+import 'package:musika/presentation/auth/pages/signup.dart';
 
 import '../../../common/widgets/appbar/app_bar.dart';
 
@@ -16,7 +17,7 @@ class SignupOrSigninPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          BasicAppBar(),
+          const BasicAppBar(),
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(
@@ -83,7 +84,13 @@ class SignupOrSigninPage extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: BasicAppButton(
-                        onPressed: () {}, 
+                        onPressed: () {
+                          Navigator.push(context,
+                           MaterialPageRoute(
+                            builder: (BuildContext context) => const SignupPage()
+                            )
+                            );
+                        }, 
                         title: 'Register'),
                     ),
                     const SizedBox(
