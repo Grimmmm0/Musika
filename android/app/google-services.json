@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299913310200",
+    "project_id": "musika-player",
+    "storage_bucket": "musika-player.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299913310200:android:89a63fbf6f9e532f6a700d",
+        "android_client_info": {
+          "package_name": "com.musika.player"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1K_AmL7-VNeFjYH0lbvM6CD4R5Ab2r8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
