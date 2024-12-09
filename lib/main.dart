@@ -7,6 +7,7 @@ import 'package:musika/core/configs/theme/app_theme.dart';
 import 'package:musika/firebase_options.dart';
 import 'package:musika/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:musika/presentation/splash/pages/splash.dart';
+import 'package:musika/service_locator.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -17,8 +18,11 @@ Future<void> main() async {
         : await getApplicationDocumentsDirectory(),
   );
   await Firebase.initializeApp(
+    name: 'musika-player',
     options: DefaultFirebaseOptions.currentPlatform
   );
+
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
