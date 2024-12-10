@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:musika/common/widgets/appbar/app_bar.dart';
 import 'package:musika/common/widgets/button/basic_app_button.dart';
 import 'package:musika/core/configs/assets/app_images.dart';
+import 'package:musika/data/models/auth/create_user_req.dart';
+import 'package:musika/domain/usecases/auth/signup.dart';
 import 'package:musika/presentation/auth/pages/signin.dart';
+import 'package:musika/presentation/root/pages/root.dart';
+import 'package:musika/service_locator.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+ SignupPage({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +35,37 @@ class SignupPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _registerText(),
-            const SizedBox(height: 30,),
+            const SizedBox(height: 25,),
             _fullNameField(context),
             const SizedBox(height: 20,),
              _emailField(context),
              const SizedBox(height: 20,),
              _passwordField(context),
-              const SizedBox(height: 25,),
+              const SizedBox(height: 22,),
               BasicAppButton(
-                onPressed: () {}, 
+                onPressed: () async {
+                  var result = await sl<SignupUseCase>().call(
+                    params: CreateUserReq(
+                      fullName: _fullName.text.toString(), 
+                      email: _email.text.toString(), 
+                      password: _password.text.toString()
+                      )
+                  );
+                  result.fold(
+                    (l){
+                      var snackbar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                    },
+                    (r){
+                      Navigator.pushAndRemoveUntil(
+                        context, 
+                        MaterialPageRoute(builder: (BuildContext context) => const RootPage()),
+                        (route) => false     
+
+                        );
+                    }
+                    );
+                }, 
                 title: 'Create Account'
                 ),
           ],
@@ -57,6 +87,7 @@ class SignupPage extends StatelessWidget {
   
   Widget _fullNameField(BuildContext context){
     return TextField(
+      controller: _fullName,
       decoration: const InputDecoration(
         hintText: 'Full Name'
       )
@@ -68,6 +99,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _emailField(BuildContext context){
     return TextField(
+      controller: _email,
       decoration: const InputDecoration(
         hintText: 'Email'
       )
@@ -79,6 +111,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _passwordField(BuildContext context){
     return TextField(
+      controller: _password,
       decoration: const InputDecoration(
         hintText: 'Password'
       )
