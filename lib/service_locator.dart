@@ -3,6 +3,7 @@ import 'package:musika/data/repository/auth/auth_repository_impl.dart';
 import 'package:musika/data/sources/auth/auth_firebase_service.dart';
 import 'package:musika/domain/repository/auth/auth.dart';
 import 'package:musika/domain/usecases/auth/signup.dart';
+import 'domain/usecases/auth/signin.dart';
 
 final sl = GetIt.instance;
 
@@ -19,5 +20,10 @@ sl.registerSingleton<AuthRepository>(
 sl.registerSingleton<SignupUseCase>(
   SignupUseCase()
 );
+
+sl.registerSingleton<SigninUseCase>(
+  SigninUseCase()
+);
+
 
 }
