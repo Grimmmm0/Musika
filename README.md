@@ -1,6 +1,7 @@
 # musika
 
 A new Flutter project.
+Inspired by spotify
 
 ## Getting Started
 
