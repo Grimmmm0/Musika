@@ -1,17 +1,47 @@
-# musika
+Musika
 
-A new Flutter project.
-Inspired by spotify
+Musika is a personal online music player inspired by Spotify, developed using Flutter. The app features a clean architecture with state management powered by BLoC and leverages Firebase for both database and backend functionalities. Musika provides a seamless music streaming experience, allowing users to explore and play their favorite songs.
 
-## Getting Started
+Features
 
-This project is a starting point for a Flutter application.
+1. User Authentication
 
-A few resources to get you started if this is your first Flutter project:
+Sign up and log in with email and password.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Secure authentication using Firebase Authentication.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Music Library
+
+Browse songs stored in the Firebase database.
+
+Album cover images are displayed alongside songs.
+
+3. Music Playback
+
+Play, pause, and skip tracks.
+
+Continuous playback with a user-friendly interface.
+
+4. User-Friendly Interface
+
+Minimalist design inspired by Spotify.
+
+Intuitive navigation and controls.
+
+Technologies Used
+
+Frontend
+
+Flutter: Cross-platform app development.
+
+BLoC (Business Logic Component): For state management.
+
+Backend
+
+Firebase:
+
+Authentication: User login and registration.
+
+Firestore: Stores song metadata, user data, and album cover information.
+
+Storage: Stores audio files and album cover images.
