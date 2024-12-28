@@ -1,3 +1,6 @@
+
+<<<< DISCONTINUED - Firebase Storage is no longer FREE, I have to migrate everything to a different database basically creating a new Mobile App from scratch, therefore I decided to axe this Project of mine >>>>
+
 Musika
 
 Musika is a personal online music player inspired by Spotify, developed using Flutter. The app features a clean architecture with state management powered by BLoC and leverages Firebase for both database and backend functionalities. Musika provides a seamless music streaming experience, allowing users to explore and play their favorite songs.
